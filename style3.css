@@ -1,0 +1,338 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: black;
+  color: #d4af37;
+  font-family: Arial, sans-serif;
+  padding-top: 128px;
+}
+header {
+  padding: 20px 0px;
+  background-color: black;
+  border-bottom: 0.5px solid #584602;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nav-bar ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  margin-top: 20px;
+}
+.head li a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  color: #d4af37;
+  text-align: center;
+  margin-right: 50px;
+}
+.head li a:hover {
+  color: wheat;
+}
+.head li a.active {
+  color: wheat;
+  border-bottom: 1px solid #584602;
+  padding: 3px;
+}
+.brand h1 {
+  font-size: 40px;
+  letter-spacing: 2px;
+  font-family: "Forum", serif;
+  line-height: 0.8;
+  letter-spacing: 15px;
+}
+.brand {
+  display: block;
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 0.5px solid #584602;
+}
+.container {
+  width: 100%;
+}
+
+.card {
+  position: relative;
+  height: 33.3vh; /* كل صورة تاخد تلت الشاشة عشان تظهر زي القائمة */
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #222;
+}
+
+.card-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  object-fit: cover; /* عشان الصورة متتمطش وتملى المكان */
+  z-index: 1;
+}
+
+/* 4. الطبقة السوداء المتدرجة (السر في شكل الصورة) */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* تدرج من الأسود لشفاف ثم أسود لضمان وضوح النص من الجهتين */
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  z-index: 2;
+}
+
+/* 5. تنسيق النصوص داخل الصور */
+.info {
+  position: relative;
+  z-index: 3;
+  padding: 0 10%;
+  width: 50%; /* النص ياخد نص عرض الشاشة */
+}
+
+.info.left {
+  text-align: left;
+}
+
+.info.right {
+  text-align: right;
+  margin-left: auto; /* يزق النص لليمين */
+}
+
+.info h2 {
+  font-size: 24px;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  color: #eee;
+}
+
+.info p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ccc;
+  font-style: italic;
+}
+hr {
+  border: none;
+  height: 10px;
+  background-color: #d4af37;
+  margin: 50px 0;
+  width: 100%;
+  opacity: 1;
+}
+.monument-section {
+  display: flex;
+  height: 100vh; /* طول الصفحة */
+  margin-bottom: 40px; /* المسافة (السطر) بين كل معلم سياحي والتاني */
+  border-bottom: 1px solid #c19a6b;
+}
+body.white .monument-section {
+  flex-direction: row-reverse;
+}
+
+.content-side {
+  flex: 1; /* ياخد نص العرض */
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content-side h2 {
+  color: #c19a6b;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+
+.content-side p {
+  color: white;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+body.white .content-side p {
+  color: black;
+}
+
+.image-side {
+  flex: 1; /* ياخد النص التاني من العرض */
+  height: 100%;
+}
+
+/* أهم جزء لتنسيق الصورة العادية */
+.image-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* بيخلي الصورة تملا المساحة من غير ما تتمط */
+  display: block;
+}
+#theme1,
+#theme2 {
+  position: absolute;
+  top: 15px;
+  right: 60px;
+  font-size: 20px;
+  border-radius: 5px;
+  background-color: #d4af37;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+#theme1 {
+  color: white;
+}
+#theme2 {
+  color: black;
+}
+#theme2 {
+  display: none;
+}
+body.white .head li a.active,
+body.white .head li a:hover {
+  color: rgb(102, 71, 0);
+}
+
+#theme1:hover,
+#theme2:hover {
+  background-color: #6e5b1c;
+}
+.footer {
+  background-color: #000;
+  color: #aaa;
+  padding: 80px 60px;
+  border-top: 1px solid #917937a8;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* LEFT */
+.footer-left {
+  max-width: 300px;
+}
+
+.logo {
+  color: white;
+  font-size: 40px;
+  margin-bottom: 20px;
+  font-family: "Playfair Display", serif;
+}
+
+.logo span {
+  color: #c9a74d;
+}
+
+.footer-left p {
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.socials {
+  margin-top: 20px;
+}
+
+.socials a {
+  display: inline-block;
+  margin-right: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* SECTIONS */
+.footer-section h3 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.discover-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 40px;
+  list-style: none;
+  padding: 0;
+}
+
+.discover-grid li a {
+  text-decoration: none;
+  color: #aaa;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.discover-grid li a:hover {
+  color: #d4af37;
+}
+
+.footer-section p {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+/* NEWSLETTER */
+.footer-section input {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #333;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.footer-section button {
+  background: none;
+  border: none;
+  color: #d4af37;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* LINE */
+.footer-line {
+  margin-top: 50px;
+  height: 1px;
+  background-color: #222;
+}
+
+body.white footer,
+body.white footer * {
+  color: black;
+  background-color: white;
+}
+body.white .logo span {
+  color: #c9a74d;
+}
+body.white .footer-section button {
+  color: #d4af37;
+}
+.login {
+  position: absolute;
+  top: 22px;
+  right: 150px;
+  font-size: 20px;
+  color: #d4af37;
+  cursor: pointer;
+}
+.login:hover {
+  color: #6e5b1c;
+}

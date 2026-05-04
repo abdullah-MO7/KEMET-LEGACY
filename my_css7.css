@@ -1,0 +1,440 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: black;
+  color: #d4af37;
+  font-family: Arial, sans-serif;
+  padding-top: 128px;
+}
+header {
+  padding: 20px 0px;
+  background-color: black;
+  border-bottom: 0.5px solid #584602;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nav-bar ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  margin-top: 20px;
+}
+.head li a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  color: #d4af37;
+  text-align: center;
+  margin-right: 50px;
+}
+.head li a:hover {
+  color: wheat;
+}
+.head li a.active {
+  color: wheat;
+  border-bottom: 1px solid #584602;
+  padding: 3px;
+}
+.brand h1 {
+  font-size: 40px;
+  letter-spacing: 2px;
+  font-family: "Forum", serif;
+  line-height: 0.8;
+  letter-spacing: 15px;
+}
+.brand {
+  display: block;
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 0.5px solid #584602;
+}
+
+#intro {
+  font-size: 30px;
+}
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 50px;
+  min-height: auto;
+}
+h2 {
+  color: #d0a61b;
+}
+.text {
+  flex: 1;
+  padding-right: 20px;
+}
+.images-sidebar {
+  flex: 1;
+  position: relative;
+  height: 400px;
+  max-width: 500px;
+  border-radius: 8px; /* to make he border of images circliiy */
+}
+.wrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  opacity: 0;
+  animation: fadeLoop 18s infinite;
+}
+.image_1 {
+  background-image: url(imgs/image.png);
+}
+.image_2 {
+  background-image: url(imgs/image.jpg);
+  animation-delay: 3s;
+}
+.image_3 {
+  background-image: url(imgs/image2.jpg);
+  animation-delay: 6s;
+}
+.image_4 {
+  background-image: url(imgs/image3.jpg);
+  animation-delay: 9s;
+}
+.image_5 {
+  background-image: url(imgs/mosque.JPG);
+  animation-delay: 12s;
+}
+.image_6 {
+  background-image: url(imgs/image4.jpg);
+  animation-delay: 15s;
+}
+.photo_1 {
+  background-image: url(imgs/photo1.jpg);
+}
+.photo_2 {
+  background-image: url(imgs/photo4.JPG);
+  animation-delay: 3s;
+}
+.photo_3 {
+  background-image: url(imgs/photo5.jpg);
+  animation-delay: 6s;
+}
+.photo_4 {
+  background-image: url(imgs/photo6.jpg);
+  animation-delay: 9s;
+}
+.photo_5 {
+  background-image: url(imgs/photo8.jpg);
+  animation-delay: 12s;
+}
+.photo_6 {
+  background-image: url(imgs/photo9.webp);
+  animation-delay: 15s;
+}
+
+@keyframes fadeLoop {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.cetadel1 {
+  background-image: url(imgs/citadel1.jpg);
+}
+.cetadel2 {
+  background-image: url(imgs/citadel2.jpg);
+  animation-delay: 2.25s;
+}
+.cetadel3 {
+  background-image: url(imgs/citadel3.jpg);
+  animation-delay: 4.5s;
+}
+.cetadel4 {
+  background-image: url(imgs/citadel4.jpg);
+  animation-delay: 6.75s;
+}
+.cetadel5 {
+  background-image: url(imgs/citadel5.jpg);
+  animation-delay: 9s;
+}
+.cetadel6 {
+  background-image: url(imgs/saladin.jpg);
+  animation-delay: 11.25s;
+}
+.cetadel7 {
+  background-image: url(imgs/cetadel7.jpg);
+  animation-delay: 13.5s;
+}
+.cetadel8 {
+  background-image: url(imgs/cetadel8.jpg);
+  animation-delay: 15.75;
+}
+
+.link {
+  display: inline-block;
+  transition: 0.4s ease; /* سرعة الحركة */
+  color: black; /* لون افتراضي مغاير للأزرق */
+  text-decoration: none;
+}
+.link:hover {
+  transform: scale(1.2);
+}
+.link:active {
+  transform: scale(0.9);
+}
+#home_background {
+  background-image: url(imgs/back-image.png);
+  width: 100%;
+  height: 500px;
+  color: black;
+  padding-bottom: 5px;
+}
+.hero {
+  position: relative;
+  width: 100%;
+  height: 60vh; /* ليأخذ طول الشاشة بالكامل */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  color: black;
+}
+.main-card {
+  transition: 0.4s;
+  cursor: pointer;
+  border: 5px solid transparent;
+}
+.main-card:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    0 25px 40px rgba(229, 193, 0, 0.3),
+    0 5px 15px rgba(184, 134, 11, 0.4); /*بيعبر عن الظل خلف الكارت الرقم الاول عن horizontal offset(x) والثاني والثالث عن vertical(y)لو موجب الظل بينزل لاسفل كتبنا ظلين الاول الخارجي والثاني الداخلي*/
+  border-color: #e5c100;
+}
+
+.intro-sidebar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-height: 700px;
+  align-items: center;
+}
+
+.text-side {
+  width: 55%;
+  font-size: 30px;
+  max-height: 700px;
+  text-align: left;
+  justify-content: flex-start;
+  margin-left: 10px;
+  line-height: 1.5;
+  font-style: italic;
+}
+.video-side {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 40%;
+  height: 700px;
+  padding: 0px;
+  margin-right: 5px;
+}
+
+.video-side video {
+  width: 100%;
+  height: 100%;
+  max-height: 700px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.header-side {
+  width: 100%;
+  text-align: center;
+  /* margin-bottom: 20px; */
+  font-style: italic;
+}
+
+.header-side h1 {
+  font-size: 48px;
+  color: #ffcc00;
+  text-decoration: underline;
+}
+
+#theme1,
+#theme2 {
+  position: absolute;
+  top: 15px;
+  right: 60px;
+  font-size: 20px;
+  border-radius: 5px;
+  background-color: #d4af37;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+#theme1 {
+  color: white;
+}
+#theme2 {
+  color: black;
+}
+#theme2 {
+  display: none;
+}
+body.white .head li a.active,
+body.white .head li a:hover {
+  color: rgb(102, 71, 0);
+}
+#theme1:hover,
+#theme2:hover {
+  background-color: #6e5b1c;
+}
+
+/* footer start to change color */
+body.white footer,
+body.white footer * {
+  color: black;
+  background-color: white;
+}
+body.white .logo span {
+  color: #c9a74d;
+}
+body.white .footer-section button {
+  color: #d4af37;
+}
+/* footer end to change color
+
+
+/* footer نفسه */
+.footer {
+  background-color: #000;
+  color: #aaa;
+  padding: 80px 60px;
+  border-top: 1px solid #917937a8;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* LEFT */
+.footer-left {
+  max-width: 300px;
+}
+
+.logo {
+  color: white;
+  font-size: 40px;
+  margin-bottom: 20px;
+  font-family: "Playfair Display", serif;
+}
+
+.logo span {
+  color: #c9a74d;
+}
+
+.footer-left p {
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.socials {
+  margin-top: 20px;
+}
+
+.socials a {
+  display: inline-block;
+  margin-right: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* SECTIONS */
+.footer-section h3 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.discover-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 40px;
+  list-style: none;
+  padding: 0;
+}
+
+.discover-grid li a {
+  text-decoration: none;
+  color: #aaa;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.discover-grid li a:hover {
+  color: #d4af37;
+}
+
+.footer-section p {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+/* NEWSLETTER */
+.footer-section input {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #333;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.footer-section button {
+  background: none;
+  border: none;
+  color: #d4af37;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* LINE */
+.footer-line {
+  margin-top: 50px;
+  height: 1px;
+  background-color: #222;
+}
+.login {
+  position: absolute;
+  top: 22px;
+  right: 150px;
+  font-size: 20px;
+  color: #d4af37;
+  cursor: pointer;
+}
+.login:hover {
+  color: #6e5b1c;
+}

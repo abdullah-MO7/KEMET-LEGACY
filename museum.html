@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Forum&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style5.css" />
+
+    <style>
+      .tickets {
+        padding: 80px;
+      }
+
+      .tickets-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .tickets-subtitle {
+        color: #d4af37;
+        letter-spacing: 3px;
+        font-size: 12px;
+        margin-bottom: 10px;
+      }
+
+      .tickets-header h1 {
+        font-size: 48px;
+        margin-bottom: 15px;
+      }
+
+      .desc {
+        color: #888;
+        max-width: 600px;
+        margin: auto;
+        font-size: 14px;
+      }
+
+      .tickets-table {
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 0 25px rgba(212, 175, 55, 0.05);
+      }
+
+      .table-head {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        padding: 20px;
+        background-color: #0a0c10;
+        color: #777;
+        font-size: 13px;
+        text-transform: uppercase;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      }
+
+      .table-row {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        padding: 25px 20px;
+        border-top: 1px solid rgba(212, 175, 55, 0.15);
+        align-items: center;
+        transition: 0.3s;
+      }
+
+      .table-row:hover {
+        background-color: rgba(212, 175, 55, 0.03);
+      }
+
+      .category {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .category h3 {
+        font-size: 18px;
+        font-family: "Playfair Display", serif;
+      }
+
+      .category p {
+        font-size: 13px;
+        color: #888;
+      }
+
+      .icon {
+        width: 40px;
+        height: 40px;
+        border: 1px solid #d4af37;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .icon i {
+        color: #d4af37;
+        font-size: 16px;
+      }
+
+      .price {
+        display: flex;
+        align-items: baseline;
+        gap: 5px;
+      }
+
+      .amount {
+        font-size: 28px;
+        font-family: "Playfair Display", serif;
+      }
+
+      .currency {
+        font-size: 12px;
+        color: #888;
+      }
+
+      .highlight .amount,
+      .highlight .currency {
+        color: #d4af37;
+      }
+
+      .tickets-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 40px;
+      }
+
+      .hours-title i {
+        color: #d4af37;
+        font-size: 16px;
+      }
+
+      .hours-title h4 {
+        margin-bottom: 10px;
+      }
+
+      .hours-title p {
+        color: #ffffff75;
+        font-size: 14px;
+      }
+
+      .tickets-btn {
+        background-color: #d4af37;
+        color: #000;
+        padding: 15px 30px;
+        border: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .tickets-btn:hover {
+        background: #b38e3a;
+        color: white;
+      }
+    </style>
+
+    <title>KEMET LEGACY | MUSEUM</title>
+  </head>
+
+  <body>
+    <header>
+      <nav class="nav-head">
+        <div class="brand">
+          <h1><i>KEMET LEGACY</i></h1>
+          <button id="theme1">white</button> <button id="theme2">black</button>
+          <a href="login.html" class="login"> Login</a>
+        </div>
+        <div class="nav-bar">
+          <ul class="head">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="map.html">MAP</a></li>
+            <li><a href="pharaohs.html">PHARAOHS</a></li>
+            <li><a href="eras.html">ERAS</a></li>
+            <li><a class="active" href="museum.html">MUSEUM</a></li>
+            <li><a href="gallery.html">GALLERY</a></li>
+            <li><a href="religions.html">RELIGIONS</a></li>
+            <li><a href="tickets.html">TICKETS</a></li>
+            <li><a href="contact.html">CONTACT US</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <p class="subtitle">WELCOME TO ETERNITY</p>
+        <h1>The Grand <br />Egyptian Museum</h1>
+        <p class="description">
+          Witness the legacy of the Pharaohs in the largest archaeological
+          museum dedicated to a single civilization.
+        </p>
+        <div class="buttons">
+          <a href="#about" class="btn primary">EXPLORE THE MUSEUM</a>
+          <a href="#tickets-museum" class="btn secondary">BOOKING PORTAL</a>
+        </div>
+      </div>
+      <div class="scroll-down">SCROLL ↓</div>
+    </section>
+
+    <!-- about section -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="about-text">
+          <p class="about-subtitle">Discover The Legacy</p>
+          <h2 class="title" class="black">
+            About The Grand<br /><span>Egyptian Museum</span>
+          </h2>
+          <p class="about-description">
+            The Grand Egyptian Museum, located in Giza, Egypt, is a monumental
+            cultural institution dedicated to preserving and showcasing the rich
+            heritage of ancient Egypt. Spanning over 500,000 square meters, the
+            museum is one of the largest archaeological museums in the world,
+            housing an extensive collection of artifacts that chronicle the
+            history, art, and culture of ancient Egypt from the Predynastic
+            period to the Greco-Roman era. The museum's design seamlessly blends
+            modern architecture with traditional Egyptian motifs, creating a
+            unique and immersive experience for visitors. With its
+            state-of-the-art facilities and comprehensive exhibits, the Grand
+            Egyptian Museum offers an unparalleled opportunity to explore the
+            wonders of ancient Egypt and its enduring legacy.
+          </p>
+          <p class="about-description">
+            The Grand Egyptian Museum is not only a repository of ancient
+            artifacts but also a center for research, education, and cultural
+            exchange. It serves as a hub for scholars, archaeologists, and
+            enthusiasts from around the world to study and appreciate the rich
+            history of ancient Egypt. The museum's collection includes iconic
+            pieces such as the treasures of Tutankhamun, monumental statues,
+            intricate jewelry, and everyday objects that provide insight into
+            the lives of ancient Egyptians. With its commitment to preserving
+            and sharing the legacy of ancient Egypt, the Grand Egyptian Museum
+            stands as a testament to the enduring fascination with this
+            remarkable civilization.
+          </p>
+          <div class="stats">
+            <div class="stat">
+              <h3>100k+</h3>
+              <p>Artifacts</p>
+            </div>
+            <div class="stat">
+              <h3>500k</h3>
+              <p>Sq Meters Space</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-image">
+          <img src="imgs/yo.jpeg" alt="Grand Egyptian Museum" />
+        </div>
+      </div>
+    </section>
+
+    <section class="tickets" id="tickets-museum">
+      <div class="tickets-header">
+        <p class="tickets-subtitle">ADMISSION</p>
+        <h1>Plan Your Journey</h1>
+        <p class="desc">
+          Select the ticket that best suits your visit. All tickets include
+          access to the main galleries and the Grand Staircase.
+        </p>
+      </div>
+
+      <div class="tickets-table">
+        <div class="table-head">
+          <span>Visitor Category</span>
+          <span>Main Galleries</span>
+          <span>Tutankhamun Hall</span>
+          <span>All Access Pass</span>
+        </div>
+
+        <div class="table-row">
+          <div class="category">
+            <div class="icon"><i class="fa-solid fa-id-card"></i></div>
+            <div>
+              <h3>Egyptian</h3>
+              <p>Adult</p>
+            </div>
+          </div>
+
+          <div class="price">
+            <span class="amount">200</span>
+            <span class="currency">EGP</span>
+          </div>
+
+          <div class="price">
+            <span class="amount">300</span>
+            <span class="currency">EGP</span>
+          </div>
+
+          <div class="price highlight">
+            <span class="amount">450</span>
+            <span class="currency">EGP</span>
+          </div>
+        </div>
+
+        <div class="table-row">
+          <div class="category">
+            <div class="icon"><i class="fa-solid fa-globe"></i></div>
+            <div>
+              <h3>International</h3>
+              <p>Adult</p>
+            </div>
+          </div>
+
+          <div class="price">
+            <span class="amount">1000</span>
+            <span class="currency">EGP</span>
+          </div>
+
+          <div class="price">
+            <span class="amount">1200</span>
+            <span class="currency">EGP</span>
+          </div>
+
+          <div class="price highlight">
+            <span class="amount">1800</span>
+            <span class="currency">EGP</span>
+          </div>
+        </div>
+
+        <div class="table-row">
+          <div class="category">
+            <div class="icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div>
+              <h3>Student</h3>
+              <p>With valid ID</p>
+            </div>
+          </div>
+
+          <div class="price">
+            <span class="amount">50%</span>
+            <span class="currency">Off</span>
+          </div>
+
+          <div class="price">
+            <span class="amount">50%</span>
+            <span class="currency">Off</span>
+          </div>
+
+          <div class="price highlight">
+            <span class="amount">50%</span>
+            <span class="currency">Off</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tickets-footer">
+        <div class="hours-title">
+          <i class="fa-regular fa-clock"></i>
+          <h4>Operating Hours</h4>
+          <p>Daily: 9:00 AM – 6:00 PM</p>
+          <p>Last entry at 4:30 PM</p>
+        </div>
+        <a href="tickets.html">
+          <button class="tickets-btn">PURCHASE TICKETS ONLINE</button>
+        </a>
+      </div>
+    </section>
+
+    <!--map section-->
+    <section class="museum-map">
+      <div class="map-container">
+        <!-- HEADER -->
+        <div class="header">
+          <p class="small-title">NAVIGATION</p>
+          <h1 class="tit">Explore<span> the Halls</span></h1>
+          <p class="desc-map">
+            Navigate through the Grand Egyptian Museum with our detailed floor
+            plans.
+          </p>
+        </div>
+
+        <div class="line small"></div>
+
+        <!-- GROUND FLOOR -->
+        <div class="floor">
+          <h2 class="floor-title"><span>Ground</span> Floor</h2>
+          <iframe class="iframe" src="imgs/ground.png"></iframe>
+        </div>
+
+        <div class="line big"></div>
+
+        <!-- UPPER FLOOR -->
+        <div class="floor">
+          <h2 class="floor-title"><span>Upper</span> Floor</h2>
+          <iframe class="iframe" src="imgs/upper.png"></iframe>
+        </div>
+      </div>
+    </section>
+    <!-- footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- LEFT -->
+        <div class="footer-left">
+          <h1 class="logo">
+            K<span class="gold">E</span>M<span class="gold">E</span>T L<span
+              class="gold"
+              >E</span
+            >GACY<span class="gold">.</span>
+          </h1>
+          <p>
+            The Wonders of Ancient Egypt.<br />
+            Timeless Monuments & Artifacts.<br />
+            Uncovering the stories carved in history.
+          </p>
+
+          <div class="socials">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <!-- DISCOVER -->
+        <div class="footer-section">
+          <h3>Discover</h3>
+          <ul class="discover-grid">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="map.html">MAP</a></li>
+            <li><a href="pharaohs.html">PHARAOHS</a></li>
+            <li><a href="eras.html">ERAS</a></li>
+            <li><a href="museum.html">MUSEUM</a></li>
+            <li><a href="gallery.html">GALLERY</a></li>
+            <li><a href="religions.html">RELIGIONS</a></li>
+            <li><a href="tickets.html">TICKETS</a></li>
+            <li><a href="contact.html">CONTACT US</a></li>
+          </ul>
+        </div>
+
+        <!-- NEWSLETTER -->
+        <div class="footer-section">
+          <h3>Newsletter</h3>
+          <p>
+            Subscribe to receive updates on exhibitions, events, and museum
+            news.
+          </p>
+
+          <input type="email" placeholder="Email Address" />
+          <button class="gold">SUBSCRIBE →</button>
+        </div>
+      </div>
+
+      <div class="footer-line"></div>
+    </footer>
+
+    <script src="script5.js"></script>
+  </body>
+</html>

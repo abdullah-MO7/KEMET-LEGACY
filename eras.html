@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kemet Legacy | ERAS</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Forum&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="nav-head">
+        <div class="brand">
+          <h1><i>KEMET LEGACY</i></h1>
+        </div>
+
+        <button id="theme1">white</button>
+        <button id="theme2">black</button>
+        <a href="login.html" class="login"> Login</a>
+
+        <div class="nav-bar">
+          <ul class="head">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="map.html">MAP</a></li>
+            <li><a href="pharaohs.html">PHARAOHS</a></li>
+            <li><a class="active" href="eras.html">ERAS</a></li>
+            <li><a href="museum.html">MUSEUM</a></li>
+            <li><a href="gallery.html">GALLERY</a></li>
+            <li><a href="religions.html">RELIGIONS</a></li>
+            <li><a href="tickets.html">TICKETS</a></li>
+            <li><a href="contact.html">CONTACT US</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="p-text">
+        <h1>Interactive Map of Pharaonic Dynasties</h1>
+        <p>
+          Explore the historical centers of Ancient Egypt. Click on markers to
+          discover the ruling dynasties and their achievements.
+        </p>
+      </section>
+
+      <div class="main-container">
+        <div class="map-wrapper">
+          <div
+            class="marker"
+            id="marker-memphis"
+            onclick="showDynastyInfo('memphis')"
+          >
+            <div class="marker-label">Memphis</div>
+          </div>
+          <div
+            class="marker"
+            id="marker-thebes"
+            onclick="showDynastyInfo('thebes')"
+          >
+            <div class="marker-label">Thebes</div>
+          </div>
+          <div
+            class="marker"
+            id="marker-akhetaten"
+            onclick="showDynastyInfo('akhetaten')"
+          >
+            <div class="marker-label">Akhetaten</div>
+          </div>
+          <div
+            class="marker"
+            id="marker-avaris"
+            onclick="showDynastyInfo('avaris')"
+          >
+            <div class="marker-label">Avaris</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="infoPanel" id="infoPanel">
+        <h2 id="panel-city-name">City Name</h2>
+        <div id="panel-content"></div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- LEFT -->
+        <div class="footer-left">
+          <h1 class="logo">
+            K<span class="gold">E</span>M<span class="gold">E</span>T L<span
+              class="gold"
+              >E</span
+            >GACY<span class="gold">.</span>
+          </h1>
+          <p>
+            The Wonders of Ancient Egypt.<br />
+            Timeless Monuments & Artifacts.<br />
+            Uncovering the stories carved in history.
+          </p>
+
+          <div class="socials">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <!-- DISCOVER -->
+        <div class="footer-section">
+          <h3>Discover</h3>
+          <ul class="discover-grid">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="map.html">MAP</a></li>
+            <li><a href="pharaohs.html">PHARAOHS</a></li>
+            <li><a href="eras.html">ERAS</a></li>
+            <li><a href="museum.html">MUSEUM</a></li>
+            <li><a href="gallery.html">GALLERY</a></li>
+            <li><a href="religions.html">RELIGIONS</a></li>
+            <li><a href="tickets.html">TICKETS</a></li>
+            <li><a href="contact.html">CONTACT US</a></li>
+          </ul>
+        </div>
+
+        <!-- NEWSLETTER -->
+        <div class="footer-section">
+          <h3>Newsletter</h3>
+          <p>
+            Subscribe to receive updates on exhibitions, events, and museum
+            news.
+          </p>
+
+          <input type="email" placeholder="Email Address" />
+          <button class="gold">SUBSCRIBE →</button>
+        </div>
+      </div>
+
+      <div class="footer-line"></div>
+    </footer>
+
+    <link rel="stylesheet" href="style4.css" />
+    <script src="abdo4.js"></script>
+  </body>
+</html>

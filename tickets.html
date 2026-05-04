@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Forum&display=swap"
+      rel="stylesheet"
+    />
+    <link href="style8.css" rel="stylesheet" />
+
+    <title>KEMET LEGACY | TICKETS</title>
+  </head>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const body = document.body;
+
+      const images = {
+        Museum: "imgs/gm4.jpg",
+        Pyramids: "imgs/pyramids5.jpg",
+        KarnakTemple: "imgs/karnak4.jpg",
+        HatshepsutTemple: "imgs/hatsh2.jpg",
+        AbuSimbelTemple: "imgs/simbel2.jpg",
+        PhilaeTemple: "imgs/ph1.jpg",
+        p1: "imgs/IMG-20260430-WA0073.jpg",
+        p2: "imgs/IMG-20260327-WA0020.jpg",
+        p3: "imgs/ph2.jpg",
+        p4: "imgs/ph4.jpg",
+        p5: "imgs/pyramids9.jpg",
+        p6: "imgs/simbel3.jpg",
+        p7: "imgs/simbel1.jpg",
+      };
+
+      const places = [
+        "Museum",
+        "Pyramids",
+        "KarnakTemple",
+        "HatshepsutTemple",
+        "AbuSimbelTemple",
+        "PhilaeTemple",
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+      ];
+
+      let currentIndex = 0;
+      let autoChange = true;
+
+      function changeBackgroundAuto() {
+        if (!autoChange) return;
+
+        currentIndex = (currentIndex + 1) % places.length;
+        body.style.backgroundImage = `url(${images[places[currentIndex]]})`;
+      }
+
+      setInterval(changeBackgroundAuto, 4000);
+
+      const select = document.getElementById("placeSelect");
+
+      select.addEventListener("change", function () {
+        const selected = this.value;
+        body.style.backgroundImage = `url(${images[selected]})`;
+        autoChange = false;
+      });
+
+      body.style.backgroundImage = `url(${images.p5})`;
+    });
+  </script>
+  <style>
+    body {
+      background-color: black;
+    }
+  </style>
+
+  <body>
+    <header>
+      <nav class="nav-head">
+        <div class="brand">
+          <button id="theme1">white</button>
+          <button id="theme2">black</button>
+          <h1 style="color: #d4af37"><i>KEMET LEGACY</i></h1>
+          <a href="login.html" class="login"> Login</a>
+        </div>
+        <div class="nav-bar">
+          <ul class="head">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="map.html">MAP</a></li>
+            <li><a href="pharaohs.html">PHARAOHS</a></li>
+            <li><a href="eras.html">ERAS</a></li>
+            <li><a href="museum.html">MUSEUM</a></li>
+            <li><a href="gallery.html">GALLERY</a></li>
+            <li><a href="religions.html">RELIGIONS</a></li>
+            <li><a class="active" href="tickets.html">TICKETS</a></li>
+            <li><a href="contact.html">CONTACT US</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container">
+      <form method="post">
+        <h2 class="b" style="text-align: center">book now</h2>
+
+        <label for="type1">choose</label>
+        <select onchange="getType()" id="type1" name="select">
+          <option>International</option>
+          <option>Egyptian</option>
+          <option>Student-Egyptian</option>
+        </select>
+        <label for="placeSelect">choose</label>
+        <select onchange="getType()" id="placeSelect" name="select">
+          <option value="Museum">grand museum</option>
+          <option value="Pyramids">peramids and sphinx</option>
+          <option value="KarnakTemple">karnak temple complex</option>
+          <option value="HatshepsutTemple">
+            mortuary temple of hatshepsut
+          </option>
+          <option value="AbuSimbelTemple">abu simbel temples</option>
+          <option value="PhilaeTemple">philae temple</option>
+        </select>
+
+        <label>Adults</label>
+        <input
+          onkeyup="getTotal()"
+          id="adults"
+          type="number"
+          name="num of tickets"
+          min="1"
+          value=""
+        />
+        <label>Children</label>
+        <input
+          onkeyup="getTotal()"
+          id="children"
+          type="number"
+          name="num of tickets"
+          min="1"
+          value=""
+        />
+        <label>Seniors (65+)</label>
+        <input
+          onkeyup="getTotal()"
+          id="seniors"
+          type="number"
+          name="num of tickets"
+          min="1"
+          value=""
+        />
+
+        <label for="name1">name</label>
+        <input id="name1" type="text" name="name" placeholder="your name" />
+
+        <label for="email1">email</label>
+        <input
+          id="email1"
+          type="email"
+          name="email"
+          placeholder="example@email.com"
+        />
+
+        <label for="number1">number</label>
+        <input
+          id="number1"
+          type="tel"
+          name="phone-number"
+          placeholder="01xxxxxxxxx"
+        />
+
+        <label for="date1">date</label>
+        <input id="date1" name="date" type="date" min="" />
+      </form>
+
+      <div class="summary-box">
+        <h3>Booking Summary</h3>
+
+        <p>Type: <span id="summary-type">-</span></p>
+        <p>Place: <span id="summary-place">-</span></p>
+
+        <p>Adults: <span id="summary-adults">0</span></p>
+        <p>Children: <span id="summary-children">0</span></p>
+        <p>Seniors: <span id="summary-seniors">0</span></p>
+
+        <hr />
+
+        <h3>Total: <span id="summary-price">0 EGP</span></h3>
+        <button type="submit" id="submit" class="zz">book now</button>
+      </div>
+
+      <div class="info-section">
+        <div class="features">
+          <h2 class="why" style="text-align: center">why us</h2>
+
+          <div class="feature-item">Quick and easy booking</div>
+          <div class="feature-item">Best prices available</div>
+          <div class="feature-item">24/7 customer support</div>
+          <div class="feature-item">Instant booking confirmation</div>
+          <div class="feature-item">Multiple secure payment options</div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="card-header">
+            <div class="card-icon">🏛️</div>
+            <div>
+              <div class="card-title">By The Numbers</div>
+              <div class="card-subtitle">A legacy of excellence</div>
+            </div>
+          </div>
+          <div class="trust-badges">
+            <div class="badge">
+              <span class="badge-num">100k+</span>
+              <span class="badge-label">Tickets Issued</span>
+            </div>
+            <div class="badge">
+              <span class="badge-num">4.9★</span>
+              <span class="badge-label">Visitor Rating</span>
+            </div>
+            <div class="badge">
+              <span class="badge-num">120+</span>
+              <span class="badge-label">Nations Welcomed</span>
+            </div>
+            <div class="badge">
+              <span class="badge-num">500k</span>
+              <span class="badge-label">m² of Heritage</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- LEFT -->
+        <div class="footer-left">
+          <h1 class="logo">
+            K<span class="gold">E</span>M<span class="gold">E</span>T L<span
+              class="gold"
+              >E</span
+            >GACY<span class="gold">.</span>
+          </h1>
+          <p>
+            The Wonders of Ancient Egypt.<br />
+            Timeless Monuments & Artifacts.<br />
+            Uncovering the stories carved in history.
+          </p>
+
+          <div class="socials">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <!-- DISCOVER -->
+        <div class="footer-section">
+          <h5>Discover</h5>
+          <ul class="discover-grid">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="map.html">MAP</a></li>
+            <li><a href="pharaohs.html">PHARAOHS</a></li>
+            <li><a href="eras.html">ERAS</a></li>
+            <li><a href="museum.html">MUSEUM</a></li>
+            <li><a href="gallery.html">GALLERY</a></li>
+            <li><a href="religions.html">RELIGIONS</a></li>
+            <li><a href="tickets.html">TICKETS</a></li>
+            <li><a href="contact.html">CONTACT US</a></li>
+          </ul>
+        </div>
+
+        <!-- NEWSLETTER -->
+        <div class="footer-section">
+          <h5>Newsletter</h5>
+          <p>
+            Subscribe to receive updates on exhibitions, events, and museum
+            news.
+          </p>
+
+          <input type="email" placeholder="Email Address" />
+          <button class="gold">SUBSCRIBE →</button>
+        </div>
+      </div>
+
+      <div class="footer-line"></div>
+    </footer>
+
+    <script src="main8.js"></script>
+  </body>
+</html>
