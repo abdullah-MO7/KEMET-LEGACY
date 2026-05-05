@@ -251,17 +251,7 @@ body.white .item p {
   font-size: 14px;
 }
 
-.socials {
-  margin-top: 20px;
-}
 
-.socials a {
-  display: inline-block;
-  margin-right: 12px;
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-}
 
 /* SECTIONS */
 .footer-section h5 {
